@@ -11,6 +11,7 @@
         <th>所屬陣營</th>
         <th>統治</th>
         <th>操作</th>
+        <th>操作2</th>
     </tr>
     @foreach($camps as $camp)
         <tr>
@@ -20,6 +21,11 @@
             <td>
                 <a href = "camps/{{$camp->id}}" >
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href = "camps/{{$camp->id}}/edit">
+                    修改
                 </a>
             </td>
         </tr>

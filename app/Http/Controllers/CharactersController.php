@@ -60,7 +60,9 @@ class CharactersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $character = Character::findOrFail($id);
+        return  view('characters.edit')->with(['character'=>$character]) ;
+
     }
 
     /**
@@ -72,7 +74,19 @@ class CharactersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $character = Character::findOrFail($id);
+
+        $character->name = $request->input('name');
+        $character->title = $request->input('title');
+        $character->cid = $request->input('cid');
+        $character->position = $request->input('position');
+        $character->difficulty = $request->input('difficulty');
+        $character->save();
+
+        return  redirect('characters');
+
+
+
     }
 
     /**

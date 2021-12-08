@@ -11,6 +11,7 @@
         <th>角色名稱</th>
         <th>角色稱號</th>
         <th>操作</th>
+        <th>操作2</th>
     </tr>
     @foreach($characters as $character)
         <tr>
@@ -20,6 +21,12 @@
             <td>
                 <a href = "characters/{{$character->id}}" >
                     詳細
+                </a>
+
+            </td>
+            <td>
+                <a href = "characters/{{$character->id}}/edit">
+                    修改
                 </a>
             </td>
         </tr>

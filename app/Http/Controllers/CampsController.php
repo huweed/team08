@@ -61,7 +61,8 @@ class CampsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $camp = Camp::findOrFail($id);
+        return  view('camps.edit')->with(['camp'=>$camp]) ;
     }
 
     /**
@@ -73,7 +74,16 @@ class CampsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $camp = Camp::findOrFail($id);
+
+        $camp->camp = $request->input('camp');
+        $camp->rule = $request->input('rule');
+        $camp->city = $request->input('city');
+        $camp->environment = $request->input('environment');
+        $camp->level = $request->input('level');
+        $camp->save();
+
+        return  redirect('camps');
     }
 
     /**
