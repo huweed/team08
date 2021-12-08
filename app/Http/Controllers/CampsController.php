@@ -49,7 +49,8 @@ class CampsController extends Controller
      */
     public function show($id)
     {
-        //
+        $camp = Camp::findOrFail($id);
+        return  view('camps.show')->with(['camp'=>$camp]) ;
     }
 
     /**
