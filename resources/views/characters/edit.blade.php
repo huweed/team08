@@ -27,16 +27,34 @@
         </tr>
         <tr>
             <td>位置</td>
-            <td><input type="text" name="position" value="{{$character ->position}}"/></td>
+            <td>
+                <input type="radio" name="position" value="輔助"/>
+                <label for="html">輔助</label>
+                <input type="radio" name="position" value="射手"/>
+                <label for="html">射手</label>
+                <input type="radio" name="position" value="坦克"/>
+                <label for="html">坦克</label>
+                <input type="radio" name="position" value="法師"/>
+                <label for="html">法師</label>
+                <input type="radio" name="position" value="鬥士"/>
+                <label for="html">鬥士</label>
+                <input type="radio" name="position" value="刺客"/>
+                <label for="html">刺客</label>
+            </td>
         </tr>
         <tr>
             <td>難易度</td>
-            <td><input type="text" name="difficulty" value="{{$character ->difficulty}}"/></td>
+            <td>
+                <select name="difficulty" required>
+                    <option value="簡單">簡單</option>
+                    <option value="普通">普通</option>
+                    <option value="困難">困難</option>
+                </select>
+            </td>
         </tr>
     </table>
     <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>
 </form>
-
 
 
 </body>

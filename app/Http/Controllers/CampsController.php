@@ -28,6 +28,7 @@ class CampsController extends Controller
     public function create()
     {
         //
+        return view('camps.create');
     }
 
     /**
@@ -39,6 +40,23 @@ class CampsController extends Controller
     public function store(Request $request)
     {
         //
+        $camp = $request->input('camp');
+        $rule = $request->input('rule');
+        $city = $request->input('city');
+        $environment = $request->input('environment');
+        $level = $request->input('level');
+
+        Camp::create
+        (
+            [
+                'camp' =>$camp,
+                'rule' =>$rule,
+                'city' =>$city,
+                'environment' =>$environment,
+                'level' =>$level
+            ]
+        );
+        return  redirect('camps');
     }
 
     /**
