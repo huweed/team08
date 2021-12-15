@@ -12,6 +12,7 @@
         <th>角色稱號</th>
         <th>操作</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($characters as $character)
         <tr>
@@ -28,6 +29,13 @@
                 <a href = "characters/{{$character->id}}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method="post" action="characters/{{$character->id}}">
+                    @csrf
+                    @method("delete")
+                    <input type="submit" value="刪除"/>
+                </form>
             </td>
         </tr>
     @endforeach

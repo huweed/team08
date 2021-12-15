@@ -12,6 +12,7 @@
         <th>統治</th>
         <th>操作</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($camps as $camp)
         <tr>
@@ -27,6 +28,13 @@
                 <a href = "camps/{{$camp->id}}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method="post" action="camps/{{$camp->id}}">
+                    @csrf
+                    @method("delete")
+                    <input type="submit" value="刪除"/>
+                </form>
             </td>
         </tr>
     @endforeach

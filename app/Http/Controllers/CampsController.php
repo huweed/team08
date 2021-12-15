@@ -95,5 +95,8 @@ class CampsController extends Controller
     public function destroy($id)
     {
         //
+        $camp =Camp::findOrFail($id);
+        $camp ->delete();
+        return  redirect('camps');
     }
 }
