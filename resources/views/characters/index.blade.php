@@ -9,7 +9,7 @@
     <tr>
         <th>編號</th>
         <th>角色名稱</th>
-        <th>角色稱號</th>
+        <th>所屬陣營</th>
         <th>操作</th>
         <th>操作2</th>
         <th>操作3</th>
@@ -18,7 +18,7 @@
         <tr>
             <td>{{$character ->id}}</td>
             <td>{{$character ->name}}</td>
-            <td>{{$character ->title}}</td>
+            <td>{{$character ->cid}}</td>
             <td>
                 <a href = "characters/{{$character->id}}" >
                     詳細

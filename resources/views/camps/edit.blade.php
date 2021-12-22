@@ -31,7 +31,14 @@
         </tr>
         <tr>
             <td>科技水平</td>
-            <td><input type="text" name="level" value="{{$camp ->level}}"/></td>
+            <td>
+            <select name="level" required>
+                <option value="低">低</option>
+                <option value="中">中</option>
+                <option value="高">高</option>
+                <option value="未知">未知</option>
+            </select>
+            </td>
         </tr>
     </table>
     <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>

@@ -14,13 +14,14 @@ class CreateCharactersTable extends Migration
     public function up()
     {
         Schema::create('characters', function (Blueprint $table) {
-            $table->id();
+            $table->id()->comment('編號');
             $table->string('name','191') ->comment ('角色名稱') ;
-            $table->tinyInteger('cid') ->unsigned()->comment ('所屬陣營編號') ;
+            $table->foreignId('cid')->comment ('所屬陣營編號') ;
             $table->string('title','191') ->comment ('角色稱號') ;
             $table->string('position','191') ->comment ('位置') ;
             $table->string('difficulty','191') ->comment ('角色使用難易度') ;
             $table->timestamps();
+            $table->foreign('cid')->references('id')->on('camps')->onDelete('cascade') ;
         });
     }
 

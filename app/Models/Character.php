@@ -15,4 +15,9 @@ class Character extends Model
         'position' ,
         'difficulty'
     ];
+
+    public  function camp()
+    {
+        return $this->belongsTo('App\Modles\Camp','cid','id');
+    }
 }

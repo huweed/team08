@@ -15,4 +15,10 @@ class Camp extends Model
         'environment' ,
         'level'
     ];
+
+    public function  characters()
+    {
+        return $this->hasMany('App\Modles\Chaeacter','cid');
+    }
+
 }
