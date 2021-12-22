@@ -22,3 +22,5 @@ Route::resource("characters" , CharactersController::class) ;
 Route::resource("camps" , CampsController::class) ;
 
 
+
+

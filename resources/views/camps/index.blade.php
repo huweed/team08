@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示所有陣營資料</h1>
+<a href ="{{route('characters.index')}}" > 所有角色 </a>
 <table border="1">
     <tr>
         <th>編號</th>

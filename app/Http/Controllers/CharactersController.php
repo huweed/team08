@@ -119,4 +119,5 @@ class CharactersController extends Controller
         $character ->delete();
         return  redirect('characters');
     }
+    
 }

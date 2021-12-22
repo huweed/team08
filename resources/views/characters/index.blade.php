@@ -3,8 +3,10 @@
     <meta charset="UTF-8"/>
     <title>顯示所有角色資料</title>
 </head>
-<body>
+
 <h1>顯示所有角色資料</h1>
+<a href ="{{route('camps.index')}}" > 所有陣營 </a>
+<a href ="{{route('characters.create')}}" > 新增角色 </a>
 <table border="1">
     <tr>
         <th>編號</th>
