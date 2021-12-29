@@ -15,8 +15,8 @@ class CharactersController extends Controller
     public function index()
     {
         //
-        $characters = Character::all() ;
-        return  view('characters.index') ->with(['characters'=>$characters , 'var2'=>"LOL"]);
+        $characters = Character::all();
+        return view('characters.index')->with(['characters' => $characters, 'var2' => "LOL"]);
     }
 
     /**
@@ -33,7 +33,7 @@ class CharactersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,11 +47,11 @@ class CharactersController extends Controller
         Character::create
         (
             [
-                'name' =>$name,
-                'title' =>$title,
-                'cid' =>$cid,
-                'position' =>$position,
-                'difficulty' =>$difficulty
+                'name' => $name,
+                'title' => $title,
+                'cid' => $cid,
+                'position' => $position,
+                'difficulty' => $difficulty
             ]
         );
         return redirect('characters');
@@ -60,33 +60,33 @@ class CharactersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $character = Character::findOrFail($id);
-        return  view('characters.show')->with(['character'=>$character]) ;
+        return view('characters.show')->with(['character' => $character]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $character = Character::findOrFail($id);
-        return  view('characters.edit')->with(['character'=>$character]) ;
+        return view('characters.edit')->with(['character' => $character]);
 
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,8 +100,7 @@ class CharactersController extends Controller
         $character->difficulty = $request->input('difficulty');
         $character->save();
 
-        return  redirect('characters');
-
+        return redirect('characters');
 
 
     }
@@ -109,15 +108,23 @@ class CharactersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $character =Character::findOrFail($id);
-        $character ->delete();
-        return  redirect('characters');
+        $character = Character::findOrFail($id);
+        $character->delete();
+        return redirect('characters');
     }
-    
+
+    public  function  difficulty()
+    {
+        $difficulty = Character::difficulty('簡單')->get();
+        return view('characters.index',['characters'=>$difficulty]);
+    }
+
 }
+
+

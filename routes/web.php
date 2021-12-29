@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('characters/difficulty',[CharactersController::class, 'difficulty']) ->name('characters.difficulty');
+
 Route::resource("characters" , CharactersController::class) ;
 Route::resource("camps" , CampsController::class) ;
 

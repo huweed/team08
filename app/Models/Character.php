@@ -20,4 +20,10 @@ class Character extends Model
     {
         return $this->belongsTo('App\Modles\Camp','cid','id');
     }
+    public  function  scopedifficulty($query)
+    {
+        $query->where('difficulty','=',"簡單")
+            ->orderBy('difficulty');
+    }
+
 }
