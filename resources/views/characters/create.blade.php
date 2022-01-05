@@ -1,11 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示新增角色資料</title>
-</head>
-<body>
-<h1>顯示新增角色資料</h1>
-<form method="post" action="/characters">
+@extends('app')
+
+@section('title', '新增一筆角色資料')
+
+@section('lol_contents')
+    <h1>新增角色</h1>
+    <form method="post" action="/characters">
     @csrf
     <table border="1">
         <tr>
@@ -63,7 +62,5 @@
     <input type="submit" value="新增"/><input type="reset" value="重新輸入"/>
 
 
-</form>
-
-</body>
-</html>
+    </form>
+@endsection

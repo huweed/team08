@@ -117,4 +117,5 @@ class CampsController extends Controller
         $camp ->delete();
         return  redirect('camps');
     }
+
 }

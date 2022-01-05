@@ -1,11 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一角色資料編輯</title>
-</head>
-<body>
-<h1>顯示單一角色資料編輯</h1>
-<form method="post" action="/characters/{{$character->id}}">
+@extends('app')
+
+@section('title', '編輯單一角色資料')
+
+@section('lol_contents')
+    <h1>顯示單一角色資料編輯</h1>
+    <form method="post" action="/characters/{{$character->id}}">
     @csrf
     @method("put")
     <table border="1">
@@ -57,5 +56,4 @@
 </form>
 
 
-</body>
-</html>
+@endsection

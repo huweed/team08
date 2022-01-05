@@ -1,11 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一陣營資料</title>
-</head>
-<body>
-<h1>顯示單一陣營資料</h1>
-<table border="1">
+@extends('app')
+
+@section('title','顯示單一陣營資料')
+
+@section('lol_contents')
+    <h1>顯示單一陣營資料</h1>
+    <table border="1">
     <tr>
         <td>編號</td>
         <td>{{$camp ->id}}</td>
@@ -30,6 +29,5 @@
         <td>科技水平</td>
         <td>{{$camp ->level}}</td>
     </tr>
-</table>
-</body>
-</html>
+    </table>
+@endsection

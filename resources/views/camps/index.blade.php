@@ -1,12 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示所有陣營資料</title>
-</head>
-<body>
-<h1>顯示所有陣營資料</h1>
-<a href ="{{route('characters.index')}}" > 所有角色 </a>
-<table border="1">
+@extends('app')
+
+@section('title','顯示所有陣營資料')
+
+@section('lol_contents')
+    <h1>顯示所有陣營資料</h1>
+    <table border="1">
     <tr>
         <th>編號</th>
         <th>所屬陣營</th>
@@ -39,6 +37,5 @@
             </td>
         </tr>
     @endforeach
-</table>
-</body>
-</html>
+    </table>
+@endsection

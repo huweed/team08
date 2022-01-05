@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Character;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\callback;
 
 class CharactersController extends Controller
 {
@@ -26,7 +27,6 @@ class CharactersController extends Controller
      */
     public function create()
     {
-        //
         return view('characters.create');
     }
 
@@ -125,6 +125,57 @@ class CharactersController extends Controller
         return view('characters.index',['characters'=>$difficulty]);
     }
 
+    public function api_characters()
+    {
+        return Character::all();
+    }
+
+
+    public function api_update(Request $request)
+    {
+        $character = Character::find($request->input('id'));
+        if ($character == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+        $character->name = $request->input('name');
+        $character->cid = $request->input('cid');
+        $character->position = $request->input('position');
+        $character->title = $request->input('title');
+        $character->difficulty= $request->input('difficulty');
+
+        if ($character->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $character = Character::find($request->input('id'));
+
+        if ($character == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($character->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+    }
 }
 
 

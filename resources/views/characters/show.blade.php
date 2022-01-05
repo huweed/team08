@@ -1,11 +1,11 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一角色資料</title>
-</head>
-<body>
-<h1>顯示單一角色資料</h1>
-<table border="1">
+@extends('app')
+
+@section('title', '顯示單一角色資料')
+
+@section('lol_contents')
+    <h1>顯示單一角色資料</h1>
+    <a href="{{ route('characters.index') }}">所有角色</a>
+    <table border="1">
     <tr>
         <td>編號</td>
         <td>{{$character ->id}}</td>
@@ -31,5 +31,4 @@
         <td>{{$character ->difficulty}}</td>
     </tr>
 </table>
-</body>
-</html>
+@endsection

@@ -1,11 +1,10 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一陣營資料編輯</title>
-</head>
-<body>
-<h1>顯示單一陣營資料編輯</h1>
-<form method="post" action="/camps/{{$camp->id}}">
+@extends('app')
+
+@section('title','編輯單筆陣營資料')
+
+@section('lol_contents')
+    <h1>顯示單筆陣營資料編輯</h1>
+    <form method="post" action="/camps/{{$camp->id}}">
     @csrf
         @method("put")
     <table border="1">
@@ -42,7 +41,5 @@
         </tr>
     </table>
     <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>
-</form>
-
-</body>
-</html>
+    </form>
+@endsection
